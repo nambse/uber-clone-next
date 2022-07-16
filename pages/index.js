@@ -9,10 +9,12 @@ export default function Home() {
       <ActionItems>
         <Header>
           <UberLogo src="https://i.ibb.co/84stgjq/uber-technologies-new-20218114.jpg" />
+          <Link href="/profile">
           <Profile>
             <Name>Sefa Esendemir</Name>
             <UserImage src="https://pbs.twimg.com/profile_images/378800000717582304/1dfa5b3e9dc8eb4280bbf74048911ea3_400x400.jpeg" />
           </Profile>
+          </Link>
         </Header>
         <ActionButtons>
           <Link href="/search">
