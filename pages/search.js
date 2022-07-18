@@ -17,7 +17,7 @@ const Search = () => {
           <Square src="https://img.icons8.com/windows/50/000000/square-full.png" />
         </FromToIcons>
         <InputBoxes>
-          <Input placeholder="Enter pickup location" />
+          <Input placeholder="Enter pickup location"/>
           <Input placeholder="Where to?" />
         </InputBoxes>
         <PlusIcon src="https://img.icons8.com/ios/50/000000/plus-math.png" />
