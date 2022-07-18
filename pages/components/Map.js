@@ -13,13 +13,23 @@ const Map = (props) => {
       center: [-99.29011, 39.39172],
       zoom: 3,
     });
+    if(props.pickUpCoordinates){
+      addToMap(map, props.pickUpCoordinates)
+    }
+    if(props.dropOffCoordinates){
+      addToMap(map, props.dropOffCoordinates)
+    }
+    if(props.pickUpCoordinates && props.dropOffCoordinates){
+      map.fitBounds([
+        props.pickUpCoordinates, // southwestern corner of the bounds
+        props.dropOffCoordinates // northeastern corner of the bounds
+        ])
+    }
+  }, [props.pickUpCoordinates,props.dropOffCoordinates]);
 
-    addToMap(map);
-  });
-
-  const addToMap = (map) => {
+  const addToMap = (map, coordinates) => {
     const marker1 = new mapboxgl.Marker()
-      .setLngLat([12.554729, 55.70651])
+      .setLngLat(coordinates)
       .addTo(map);
   };
 

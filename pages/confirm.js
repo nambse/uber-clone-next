@@ -3,10 +3,8 @@ import tw from "tailwind-styled-components/dist/tailwind";
 import Map from "./components/map";
 
 const Confirm = () => {
-    const [pickUpCoordinates, setPickUpCoordinates] = useState();
-    const [dropOffCoordinates, setDropOffCoordinates] = useState();
-
-
+  const [pickUpCoordinates, setPickUpCoordinates] = useState();
+  const [dropOffCoordinates, setDropOffCoordinates] = useState();
 
   const getPickupCoordinates = () => {
     const pickup = "Santa Monica";
@@ -21,7 +19,7 @@ const Confirm = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        setPickUpCoordinates(data.features[0].center)
+        setPickUpCoordinates(data.features[0].center);
       });
   };
 
@@ -38,7 +36,7 @@ const Confirm = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        setDropOffCoordinates(data.features[0].center)
+        setDropOffCoordinates(data.features[0].center);
       });
   };
 
@@ -49,7 +47,10 @@ const Confirm = () => {
 
   return (
     <Wrapper>
-      <Map />
+      <Map
+        pickUpCoordinates={pickUpCoordinates}
+        dropOffCoordinates={dropOffCoordinates}
+      />
       <RideContainer>Ride Selector Confirm Button</RideContainer>
     </Wrapper>
   );
